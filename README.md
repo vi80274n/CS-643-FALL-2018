@@ -13,7 +13,7 @@ $app->get('/', function () use ($app) {
     $sms = $client->account->messages->sendMessage(
         $fromNumber, // From this number
         $toNumber,   // Send to this number
-        'Hello monkey!!'
+        'Hello !!'
     );
     return sprintf('Message ID: %s, Message Body: %s', $sms->sid, $sms->body);
     # [END send_sms]
@@ -21,7 +21,7 @@ $app->get('/', function () use ($app) {
 $app->post('/twiml', function () {
     # [START twiml]
     $response = new Services_Twilio_Twiml();
-    $response->say('Hello Monkey');
+    $response->say('Hello ');
     return (string) $response;
     # [END twiml]
 });
